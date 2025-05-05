@@ -5,9 +5,9 @@ using namespace std;
 class Razlomak{
 	
 		//Najveći zajednički djelitelj sa Euklidovim algoritmom
-		// Radi samo za pozitivne brojeve, ako ubacujes koji negativni, pazi koje je rjesenje i za kaj iti treba to rjesenje
-		public:
-		long long nzd(long long a, long long b) {
+
+	public:
+	long long nzd(long long a, long long b) {
             while (a != b) {
                 if (a > b) {
                     a -= b;
