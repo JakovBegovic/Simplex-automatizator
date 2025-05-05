@@ -3,10 +3,9 @@
 using namespace std;
 
 class Razlomak{
-	
-		//Najveći zajednički djelitelj sa Euklidovim algoritmom
-
 	public:
+
+	//Najveci zajednički djelitelj sa Euklidovim algoritmom
 	long long nzd(long long a, long long b) {
             while (a != b) {
                 if (a > b) {
@@ -23,46 +22,44 @@ class Razlomak{
         Razlomak(){
         	brojnik = 0;
         	nazivnik = 1;
-		}
+	}
 		
-		Razlomak(long long b, long long n){
-			if(n==0){
-				cout << "Nazivnik ne moze biti 0." << endl;
-				exit(0);
-			}else if(b==0){
-				brojnik=0;
-				nazivnik=1;
-			} else{
-				int predznak =1;
-				if(b<0){
-					predznak *=-1;
-					b *= -1;
-				}
-				if(n<0){
-					predznak *=-1;
-					n *= -1;
-					
-				}
+	Razlomak(long long b, long long n){
+		if(n==0){
+			cout << "Nazivnik ne moze biti 0." << endl;
+			exit(0);
+		}else if(b==0){
+			brojnik=0;
+			nazivnik=1;
+		} else{
+			int predznak =1;
+			if(b<0){
+				predznak *=-1;
+				b *= -1;
+			}
+			if(n<0){
+				predznak *=-1;
+				n *= -1;
 				
-				long long priv= nzd(b, n);
-				brojnik = b/priv*predznak;
-				nazivnik = n/priv;
 			}
+			
+			long long priv= nzd(b, n);
+			brojnik = b/priv*predznak;
+			nazivnik = n/priv;
 		}
+	}
 		
-		
-		
-		void Ispis(){
-			if(nazivnik==1){
-				cout << brojnik;
-			} else {
-				cout << brojnik << "/" << nazivnik;
-			}
+	void Ispis(){
+		if(nazivnik==1){
+			cout << brojnik;
+		} else {
+			cout << brojnik << "/" << nazivnik;
 		}
-		
-		double Decimalni(){
-			return double(brojnik/nazivnik);
-		}
+	}
+	
+	double Decimalni(){
+		return double(brojnik/nazivnik);
+	}
 		
 };
 
